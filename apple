@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+float calculateTotalAmount(float appleCost, float bananaCost, float pomgrenateCost, int appleQty, int bananaQty, int pomgrenateQty) {
+    float totalAmount = (appleCost * appleQty) + (bananaCost * bananaQty) + (pomgrenateCost * pomgrenateQty);
+    return totalAmount;
+}
+
+float applyDiscount(float totalAmount) {
+    float discount = 0;
+    if (totalAmount >= 300) {
+        discount = totalAmount * 0.2; // 20% discount
+    }
+    return discount;
+}
+
+int main() {
+    float appleCost = 100;
+    float bananaCost = 60;
+    float pomgrenateCost = 150;
+    int appleQty = 5;
+    int bananaQty = 3;
+    int pomgrenateQty = 7;
+
+    float totalAmount = calculateTotalAmount(appleCost, bananaCost, pomgrenateCost, appleQty, bananaQty, pomgrenateQty);
+    float discount = applyDiscount(totalAmount);
+    float discountedAmount = totalAmount - discount;
+
+    printf("Total Amount: Rs. %.2f\n", totalAmount);
+    if (discount > 0) {
+        printf("Discounted Amount (20%% off for purchases over Rs. 300): Rs. %.2f\n", discount);
+        printf("Total Amount after Discount: Rs. %.2f\n", discountedAmount);
+    } else {
+        printf("No discount applied.\n");
+    }
+
+    return 0;
+}
