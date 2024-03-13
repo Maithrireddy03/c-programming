@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+// Define the Song structure
+struct SongRecord {
+    char title[100];
+    char artist[100];
+    char album[100];
+    float length;
+};
+
+int main() {
+    struct SongRecord mySong;
+
+    printf("Enter song title: ");
+    scanf("%s", mySong.title);
+
+    printf("Enter artist name: ");
+    scanf("%s", mySong.artist);
+
+    printf("Enter album name: ");
+    scanf("%s", mySong.album);
+
+    printf("Enter song length (in minutes): ");
+    scanf("%f", &mySong.length);
+
+    // Print song information
+    printf("\nSong Information:\n");
+    printf("Title: %s\n", mySong.title);
+    printf("Artist: %s\n", mySong.artist);
+    printf("Album: %s\n", mySong.album);
+    printf("Length: %.2f minutes\n", mySong.length);
+
+    return 0;
+}
