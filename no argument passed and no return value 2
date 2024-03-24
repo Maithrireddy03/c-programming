@@ -1,0 +1,13 @@
+#include<stdio.h>
+void sub();
+void sub()
+{
+    int a=20,b=10,sub;
+    sub=a-b;
+    printf("subraction =%d\n",sub);
+}
+int main()
+{
+    sub();
+    return 0;
+}
